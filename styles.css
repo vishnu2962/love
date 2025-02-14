@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.card {
+  position: relative;
+  width: 60vw;
+  height: 70vh;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 40px;
+  transition: transform 0.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.balloon {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  width: 100px;
+  height: 150px;
+  background-image: url('https://via.placeholder.com/100x150.png?text=Balloon'); /* Replace with your balloon image URL */
+  background-size: cover;
+  background-position: center;
+  animation: balloon-float 3s ease-in-out infinite;
+  transform: translateX(-50%);
+}
+
+@keyframes balloon-float {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-30px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.message {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  transform: translateY(20px);
+}
+
+.message h1 {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.message p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+#next-button {
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #ff6b6b;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#next-button:hover {
+  background-color: #ff4b4b;
+}
+
+.countdown {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Hearts Falling Animation */
+@keyframes hearts-fall {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh); /* Falls to the bottom of the screen */
+  }
+}
+
+.heart {
+  position: absolute;
+  top: -50px;
+  font-size: 2rem; /* Adjust the emoji size */
+  animation: hearts-fall 5s linear infinite;
+  z-index: 10;
+}
+
+.rose {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  background-image: url('https://via.placeholder.com/150x150.png?text=Rose'); /* Replace with your rose image URL */
+  background-size: cover;
+  background-position: center;
+  display: none;
+  transform: translateX(-50%);
+}
+
+.rose.fade-in {
+  display: block;
+  animation: fadeIn 2s ease-out;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    width: 100%; /* Full width on mobile */
+    max-width: 100%; /* Ensure it fits mobile screen */
+    padding: 20px;
+  }
+
+  .message {
+    font-size: 8px;
+  }
+
+  #proposal-image {
+    width: 80px; /* Smaller heart image */
+    height: 80px;
+  }
+
+  .proposal-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* Style for the proposal buttons */
+.proposal-button {
+  padding: 12px 25px;
+  font-size: 18px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 10px; /* Add spacing between the buttons */
+}
+
+.proposal-button:hover {
+  background-color: #ff4b4b;
+}
+
+/* Ensure buttons are positioned at the bottom of the card */
+#buttons-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the buttons */
+  align-items: center;     /* Vertically center the buttons */
+  gap: 20px;               /* Space between buttons */
+  position: absolute;
+  bottom: 30px;            /* Fix it to the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Ensure buttons stay inside the card */
+.card {
+  position: relative;
+  width: 60vw;
+  height: 70vh;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 40px;
+  transition: transform 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure content is spaced out */
+}
+
+  h2{
+      font-size: 12px;
+  }
+  #countdown {
+    font-size: 12px;
+  }
+
+  .rose {
+    width: 80px;
+    height: 80px;
+  }
+
+  #next-button {
+    font-size: 18px;
+    padding: 12px 20px;
+  }
+}
+
